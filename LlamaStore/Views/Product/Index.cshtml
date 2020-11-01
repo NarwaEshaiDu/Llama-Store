@@ -1,0 +1,26 @@
+﻿@model List<Product>
+@{ ViewBag.Title = "Product";}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ foreach (var product in Model)
+            {
+                <tr>
+                    <td><img src="~/images/Products/@(product.Id).jpg" width="250px" height="250px" /></td>
+                    <td><p><a asp-controller="Product" asp-action="Details" asp-route-id=@(product.Id)>@product.Name</a></p></td>
+                    <td><p>@product.Description</p></td>
+                    <td><p>@product.Price</p></td>
+                </tr>
+        }
+        }
+        </tbody>
+    </table>

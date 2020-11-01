@@ -1,0 +1,7 @@
+﻿@model Product
+@{ ViewBag.Title = $"Products - {Model.Name}";}
+
+<img  src="~/images/Products/@(Model.Id).jpg" height="250" width="250"/>
+<p>@Model.Name </p>
+<p>@Model.Description</p>
+<p>@Model.Price</p>
